@@ -1,3 +1,3 @@
-require './test.rb'
+require './return.rb'
 
 puts 'hello, ruby.'
