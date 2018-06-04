@@ -40,5 +40,42 @@ Kernel.#Integerは例外を発生させる
 # Integer#digitsは、正の数値に対してのみ呼び出すことが可能。負の数には例外発生
 ```
 
-### Float
+## String
 
+- `String#slice`のショートハンドとして`String#[]`を用いることも出来る
+
+### 文字列の整形
+
+```
+str.strip   # 両端から除去
+str.rstrip  # 右端から除去
+str.lstrip  # 左端から除去
+str.chomp   # 文字列の末尾にある改行コードを1つ取り除いた文字列を返す
+str.chop    # 文字種にかかわらず文字列の末尾の1文字を取り除いた文字列を返す
+str.squeeze # 文字列の中で連続した文字を1つにまとめる
+
+str.downcase
+str.upcase
+str.swapcase
+str.capitalize
+
+str.sub(/regexp/, 'x')    # 最初に正規表現にマッチした部分を第二引数の文字列と置き換える
+str.gsub(/regexp/, 'x')   # 全部置き換える
+
+```
+
+### 文字列の内部バッファサイズを指定する
+
+```
+s = String.new(capaciry: 10_000)
+
+2_000.times do
+  s << 'hello'
+end
+```
+
+文字列をString.newで作成する際、内部バッファサイズを指定できる(Ruby2.4から)。
+これによって、文字列への追記を繰り返すようね処理でメモリのアロケーションの頻発を抑えられる。
+内部バッファのサイズはcapacityキーワード引数で指定する。
+
+## Regexp
