@@ -111,3 +111,13 @@ Regexp.last_match[:number]  # => "123"
 | e | 正規表現をEUC-JPとして解釈する |
 | n | 正規表現をASCⅡとして解釈する |
 
+
+## Comparable
+
+比較演算のためのメソッドを提供
+
+## Enumerable
+
+ArrayやHash、Rangeなど、オブジェクトの集まりを表現するクラスにはEnumerableがincludeされている。
+
+
